@@ -56,9 +56,10 @@
   .msgMeta {
     color: rgb(33, 207, 255);
     font-size: 10px;
-width: 100%;
-text-align: end;
-margin-top: -15px;  }
+      width: 100%;
+      text-align: end;
+      margin-top: -15px;  
+  }
 
   .messagetext{
     font-size: 1rem;

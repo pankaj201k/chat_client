@@ -7,13 +7,10 @@ const Messages = ({ socket, username }) => {
     const messagesColumnRef = useRef(null);
     useEffect(() => {
         socket.on('receive_messages', (data) => {
-            // console.log(data, "ewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
             setMessagesReceived((state) => ([...state, data]));
         });
         return () => socket.off('receive_messages');
     }, [socket]);
-
-
     useEffect(() => {
         messagesColumnRef.current.scrollTop =
             messagesColumnRef.current.scrollHeight;
