@@ -1,7 +1,7 @@
 import styles from './style.module.css';
 import { useState, useEffect, useRef } from 'react';
 
-const Messages = ({ socket }) => {
+const Messages = ({ socket, username }) => {
     const [messagesRecieved, setMessagesReceived] = useState([]);
 
     const messagesColumnRef = useRef(null);
@@ -24,17 +24,18 @@ const Messages = ({ socket }) => {
         return date.toLocaleString();
     }
 
+    console.log(messagesRecieved, "messagesRecieved")
     return (
 
         <div className={styles.messagesColumn} ref={messagesColumnRef}>
             {messagesRecieved.map((msg, i) => (
-                <div className={styles.message} key={i}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', height: "auto" }}>
-                        <span className={styles.msgMeta}>{msg.message}</span>
+                <div className={styles.message} style={{ justifyContent: msg.username === username ? "flex-end" : "flex-start" }} key={i}>
+                    <div className={styles.content} style={{ backgroundColor: msg.username === username ? "rgb(0, 24, 111)" : "rgb(0, 101, 129)" }} >
+                        <span className={styles.messagetext}>{msg.message}</span>
                         <span className={styles.msgMeta}>
                             {formatDateFromTimestamp(msg.__createdtime__)}
                         </span>
-                        <span className={styles.msgMeta}>
+                        <span className={styles.messagetext}>
                             {msg.username}
                         </span>
                     </div>

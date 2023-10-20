@@ -11,7 +11,7 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
     return (
         <div className="container">
             <div className="formContainer">
-                <h1>{`<>DevRooms</>`}</h1>
+                <h1>{`Chat Room`}</h1>
                 <input className="input" placeholder='Username...'
                     onChange={(e) => setUsername(e.target.value)}
                 />
@@ -19,10 +19,10 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
                     onChange={(e) => setRoom(e.target.value)}
                 >
                     <option>-- Select Room --</option>
-                    <option value='Javascript'>JavaScript</option>
-                    <option value='Node'>Node</option>
-                    <option value='Express'>Express</option>
-                    <option value='Eeact'>React</option>
+                    <option value='Room1'>Room1</option>
+                    <option value='Room2'>Room2</option>
+                    <option value='Room3'>Room3</option>
+                    <option value='Room4'>Room4</option>
 
                 </select>
                 <button className='btn btn-secondary' style={{ width: '100%' }} onClick={joinRoom} >Join Room</button>

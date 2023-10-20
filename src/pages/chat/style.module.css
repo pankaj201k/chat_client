@@ -34,18 +34,36 @@
   .messagesColumn {
     height: 85vh;
     overflow: auto;
-    padding: 10px 10px 10px 40px;
+    padding: 10px;
+    max-width: 600px;
   }
   .message {
-    background: rgb(0, 24, 111);
-    border-radius: 6px;
-    margin-bottom: 24px;
-    max-width: 600px;
+    margin-bottom: 0px;
     padding: 5px;
+    width:100%;
+    display: flex;    
+  }
+  
+  .content{
+    background: rgb(0, 24, 111);
+    width:70%;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 30px;
+    padding: 15px;
+    gap: 5px;
   }
   .msgMeta {
-    color: rgb(153, 217, 234);
-    font-size: 0.75rem;
+    color: rgb(33, 207, 255);
+    font-size: 10px;
+width: 100%;
+text-align: end;
+margin-top: -15px;  }
+
+  .messagetext{
+    font-size: 1rem;
+    color: rgb(192, 241, 255);
+    width: fit-content;
   }
   .msgText {
     color: #fff;
@@ -53,7 +71,10 @@
   
   /* Message input and button */
   .sendMessageContainer {
+    max-width: 600px;
     padding: 16px 20px 20px 16px;
+    display: flex;
+    justify-content: space-between;
   }
   .messageInput {
     padding: 14px;
